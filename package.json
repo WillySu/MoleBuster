@@ -1,0 +1,13 @@
+{
+  "name": "WillyBoyMoleBuster",
+  "version": "0.0.1",
+  "description": "Mole Buster in 2D Canvas",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WillySu/MoleBuster.git"
+  },
+  "devDependencies": {
+    "jsdoc": "^3.3.0",
+		"jshint": "^2.8.0"
+  }
+}

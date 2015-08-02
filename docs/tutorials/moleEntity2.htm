@@ -1,0 +1,61 @@
+<script src="../Entities/Entity.js"></script>
+<script src="../Entities/CanvasEntity.js"></script>
+<script src="../Entities/MoleEntity.js"></script>
+<script src="../Components/Component.js"></script>
+<script src="../Components/DrawComponent.js"></script>
+<script src="../Components/DrawEyesComponent.js"></script>
+<script src="../Components/MoveEyesComponent.js"></script>
+<script src="../Components/DrawMoleHeadComponent.js"></script>
+<script src="../Components/EventComponent.js"></script>
+<script src="../Components/MouseMoveEventComponent.js"></script>
+<script src="../docs/tutorials/SourceCodeViewer.js"></script>
+<link type="text/css" rel="stylesheet" href="../docs/tutorials/style.css">
+
+<div id="htmlCode"><!-- 3 Canvas html tags -->
+	<canvas id="moleCanvas1"></canvas>
+	<canvas id="moleCanvas2"></canvas>
+	<canvas id="moleCanvas3"></canvas>
+	<canvas id="moleCanvas4"></canvas>
+	<canvas id="moleCanvas5"></canvas>
+	<canvas id="moleCanvas6"></canvas>
+</div>
+
+<details>
+  <summary><b>MoleEntity Details</b></summary>
+  <p><b>.init()</b> function also takes width and height parameters, default is 256 x 256 (pixels)</p>
+</details>
+
+<br/>
+
+<div class="codeSampleRow">
+	<h4>HTML code:</h4>
+	<div id="htmlViwer"></div>
+</div>
+
+<div class="codeSampleRow">
+	<h4>JavaScript Source code:</h4>
+	<div id="jsViwer"></div>
+<div>
+
+<script>
+	SourceCodeViewer("htmlCode", "htmlViwer", {"width":"100%","height":"180px"});
+</script>
+
+<script id="jsCode">//Define mole's width and height, default is 256 x 256
+var entity1 = new MOLE.MoleEntity("Mole1"),
+      entity2 = new MOLE.MoleEntity("Mole2"),
+      entity3 = new MOLE.MoleEntity("Mole3"),
+      entity4 = new MOLE.MoleEntity("Mole4"),
+      entity5 = new MOLE.MoleEntity("Mole5"),
+      entity6 = new MOLE.MoleEntity("Mole6");
+
+entity1.init({"canvas":"moleCanvas1"}).update();
+entity2.init({"canvas":"moleCanvas2","width":128,"height":128}).update();
+entity3.init({"canvas":"moleCanvas3","width":64,"height":64}).update();
+entity4.init({"canvas":"moleCanvas4","width":32,"height":32}).update();
+entity5.init({"canvas":"moleCanvas5","width":16,"height":16}).update();
+entity6.init({"canvas":"moleCanvas6","width":8,"height":8}).update();</script>
+
+<script>
+	SourceCodeViewer("jsCode", "jsViwer", {"width":"100%","height":"320px"});
+</script>

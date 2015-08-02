@@ -1,0 +1,81 @@
+<script src="../Entities/Entity.js"></script>
+<script src="../Entities/CanvasEntity.js"></script>
+<script src="../Entities/MoleEntity.js"></script>
+<script src="../Components/Component.js"></script>
+<script src="../Components/DrawComponent.js"></script>
+<script src="../Components/DrawEyesComponent.js"></script>
+<script src="../Components/MoveEyesComponent.js"></script>
+<script src="../Components/DrawMoleHeadComponent.js"></script>
+<script src="../Components/EventComponent.js"></script>
+<script src="../Components/MouseMoveEventComponent.js"></script>
+<script src="../docs/tutorials/SourceCodeViewer.js"></script>
+<link type="text/css" rel="stylesheet" href="../docs/tutorials/style.css">
+
+<div id="htmlCode" class="center"><!-- Canvas html tag center-aligned -->
+	<canvas id="moleCanvas"></canvas>
+	<!-- Form with 9 buttons to change the mole's eyes position -->
+	<form name="ctrlForm" class="posCtrlForm">
+		<div>
+			<input name="topLeftBtn" type="button" value="left top"/>
+			<input name="topBtn" type="button" value="center top"/>
+			<input name="topRightBtn" type="button" value="right top"/>
+		</div>
+		<div>
+			<input name="leftBtn" type="button" value="left middle"/>
+			<input name="centerBtn" type="button" value="center middle"/>
+			<input name="rightBtn" type="button" value="right middle"/>
+		</div>
+		<div>
+			<input name="leftBottomBtn" type="button" value="left bottom"/>
+			<input name="bottomBtn" type="button" value="center bottom"/>
+			<input name="rightBottomBtn" type="button" value="right bottom"/>	
+		</div>
+	</form>
+</div>
+
+<details>
+  <summary><b>MoleEntity Details</b></summary>
+  <p>Call function <b>.moveEyes(</b><i>horizontal</i>, <i>vertical</i><b>)</b> to move the mole's eye-balls</p>
+	<p>Valid values for the parameter <b>horizontal</b> is <i>left</i>, <i>right</i> and <i>center</i></p>
+	<p>Valid values for the parameter <b>vertical</b> is <i>top</i>, <i>bottom</i> and <i>middle</i></p>
+</details>
+
+<br/>
+
+<div class="codeSampleRow">
+	<h4>HTML code:</h4>
+	<div id="htmlViwer"></div>
+</div>
+
+<div class="codeSampleRow">
+	<h4>JavaScript Source code:</h4>
+	<div id="jsViwer"></div>
+<div>
+
+<script>
+	SourceCodeViewer("htmlCode", "htmlViwer", {"width":"100%","height":"240px"});
+</script>
+
+<script id="jsCode">//miminum code to create a MoleEntity
+var entity = new MOLE.MoleEntity("Mole1").init({"canvas":"moleCanvas"}),
+    objForm = document.ctrlForm,
+    btnClick = function (e) {
+      var tmp, horizontal, vertical;
+      if (e && e.target && e.target.value) {
+        tmp = e.target.value.split(" ");
+        horizontal = tmp[0];
+        vertical = tmp[1];
+        entity.moveEyes(horizontal, vertical);
+      }
+    },
+    i, l, input;
+for (i=0, l=objForm.elements.length; i<l; i++) {
+  input = objForm.elements[i];
+  input.addEventListener("click", btnClick, true);
+}
+entity.update();
+</script>
+
+<script>
+	SourceCodeViewer("jsCode", "jsViwer", {"width":"100%","height":"240px"});
+</script>

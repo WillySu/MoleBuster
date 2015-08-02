@@ -1,0 +1,19 @@
+{
+  "source": {
+    "include": [
+			"Entities/CanvasEntity.js",
+      "Entities/Entity.js",
+			"Entities/MoleEntity.js",
+			"Components/Component.js",
+			"Components/DrawComponent.js",
+			"Components/DrawEyesComponent.js",
+			"Components/DrawMoleHeadComponent.js",
+			"Components/EventComponent.js",
+			"Components/MouseMoveEventComponent.js",
+			"Components/MoveEyesComponent.js"
+    ]
+  },
+  "opts": {
+    "tutorials": "./docs/tutorials"
+  }
+}

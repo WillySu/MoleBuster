@@ -1,0 +1,18 @@
+textarea {
+	font-size: 1.25em;
+	font-family: sans-serif;
+	background-color: #dddddd;
+}
+div.codeSampleRow {
+	margin-bottom: 1em;
+}
+div.codeSampleRow h4 {
+	font-weight: bold;
+}
+.center {
+	text-align: center;
+}
+form.posCtrlForm input {
+	width: 120px;
+	margin-bottom: 3px;
+}

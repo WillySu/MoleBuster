@@ -1,0 +1,47 @@
+<script src="../Entities/Entity.js"></script>
+<script src="../Entities/CanvasEntity.js"></script>
+<script src="../Entities/MoleEntity.js"></script>
+<script src="../Components/Component.js"></script>
+<script src="../Components/DrawComponent.js"></script>
+<script src="../Components/DrawEyesComponent.js"></script>
+<script src="../Components/MoveEyesComponent.js"></script>
+<script src="../Components/DrawMoleHeadComponent.js"></script>
+<script src="../Components/EventComponent.js"></script>
+<script src="../Components/MouseMoveEventComponent.js"></script>
+<script src="../docs/tutorials/SourceCodeViewer.js"></script>
+<link type="text/css" rel="stylesheet" href="../docs/tutorials/style.css">
+
+<div id="htmlCode" class="center"><!-- Canvas html tag center-aligned -->
+	<canvas id="moleCanvas"></canvas>
+</div>
+
+<details>
+  <summary><b>MoleEntity Details</b></summary>
+  <p>set <b>entity.enableMouseMoveEyesTrack</b> to true in order to enable mouse tracking.</p>
+</details>
+
+<br/>
+
+<div class="codeSampleRow">
+	<h4>HTML code:</h4>
+	<div id="htmlViwer"></div>
+</div>
+
+<div class="codeSampleRow">
+	<h4>JavaScript Source code:</h4>
+	<div id="jsViwer"></div>
+<div>
+
+<script>
+	SourceCodeViewer("htmlCode", "htmlViwer", {"width":"100%","height":"120px"});
+</script>
+
+<script id="jsCode">//miminum code to create a MoleEntity
+var entity = new MOLE.MoleEntity("Mole").init({"canvas":"moleCanvas"});
+entity.enableMouseMoveEyesTrack = true;
+entity.update();
+</script>
+
+<script>
+	SourceCodeViewer("jsCode", "jsViwer", {"width":"100%","height":"120px"});
+</script>
