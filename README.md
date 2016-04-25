@@ -1,24 +1,23 @@
-##Mole Buster
+## Mole Buster
 
 Sample code with Object-oriented and Component-Entity design
 
 - documented using jsdoc (node.js)
-  * [jsdoc home page:]	(http://willyboy.ca/programmingSamples/MoleBuster/out/index.html)
-  * [jsdoc demo page:] (http://willyboy.ca/programmingSamples/MoleBuster/out/tutorial-moleEntity1.html)
+  * [jsdoc home page:] (http://willysu.github.io/MoleBuster/www/index.html)
+  * [jsdoc demo page:] (http://willysu.github.io/MoleBuster/www/tutorial-moleEntity1.html)
 - debug-ed using jshint (node.js)
 - tested with jasmine.js (client side)
-  * [jasmine test page:] (http://willyboy.ca/programmingSamples/MoleBuster/out/tutorial-moleEntity6.html)
+  * [jasmine test page:] (http://willysu.github.io/MoleBuster/www/tutorial-moleEntity6.html)
 
-####Components
+#### Components
 
-####Entities
+#### Entities
 
-####makefile
+#### makefile
 
-######make jsdoc
+###### make jsdoc
 - jsdoc -c docs/conf.json README.md
 
-######make jshint
+###### make jshint
 - jshint Components/*.js
 - jshint Entities/*.js
-	
