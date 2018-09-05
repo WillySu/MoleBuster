@@ -32,13 +32,13 @@ MOLE.EventComponent.prototype.addWindowEvent = function (callback) {
 		getCallbackFunc = function (canvas) {
 			return function (e) {
 				var x = e.clientX || e.detail.clientX || 0,
-						y = e.clientY || e.detail.clientY || 0,
-						top = canvas.offsetTop,
-						left = canvas.offsetLeft,
-						bottom = top + canvas.offsetHeight,
-						right = left + canvas.offsetWidth,
-						horizontal = "center",
-						vertical = "middle";
+					y = e.clientY || e.detail.clientY || 0,
+					top = canvas.offsetTop - window.scrollY,
+					left = canvas.offsetLeft - window.scrollX,
+					bottom = top + canvas.offsetHeight,
+					right = left + canvas.offsetWidth,
+					horizontal = "center",
+					vertical = "middle";
 
 				if (x < left)
 					horizontal = "left";
