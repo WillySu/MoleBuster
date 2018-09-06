@@ -15,30 +15,28 @@
 <canvas id="moleCanvas"></canvas>
 </div>
 
-<details>
-  <summary><b>MoleEntity Details</b></summary>
-  <p>Use <b>new</b> to create a MoleEntity object, for example: <b>new MOLE.MoleEntity()</b></p>
-  <p><b>.init()</b> function takes a hash with attributes such as <b>canvas</b> (canvas ID or Object)</p>
-	<p><b>.update()</b> function will draw a mole in the canvas</p>
-</details>
+<h4><b>Note</b></h4>
+<p>Use <b>new</b> to create a MoleEntity object, for example: <b>new MOLE.MoleEntity()</b></p>
+<p><b>.init()</b> function takes a hash with attributes such as <b>canvas</b> (canvas ID or Object)</p>
+<p><b>.update()</b> function will draw a mole in the canvas</p>
 
 <br/>
 
-<div class="codeSampleRow">
-	<h4>HTML code:</h4>
+<details>
+	<summary>HTML code:</summary>
 	<div id="htmlViwer"></div>
-</div>
+</details>
 
-<div class="codeSampleRow">
-	<h4>JavaScript Source code:</h4>
+<details>
+	<summary>JavaScript Source code:</summary>
 	<div id="jsViwer"></div>
-<div>
+</details>
 
 <script>
 	SourceCodeViewer("htmlCode", "htmlViwer", {"width":"100%","height":"80px"});
 </script>
 
-<script id="jsCode">//miminum code to create a MoleEntity
+<script id="jsCode">// Miminum code to create a MoleEntity
 var entity = new MOLE.MoleEntity("Mole1").init({"canvas":"moleCanvas"});
 entity.update();
 </script>

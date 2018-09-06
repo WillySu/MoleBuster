@@ -31,10 +31,10 @@ MOLE.MoleEntity.prototype = Object.create(MOLE.CanvasEntity.prototype);
  */
 MOLE.MoleEntity.prototype.setComponents = function () {
 	this.addComponent(new MOLE.DrawMoleHeadComponent());
-	
+
 	this.eyesCtrl = new MOLE.MoveEyesComponent();
 	this.addComponent(this.eyesCtrl);
-	
+
 	this.mouseMoveCtrl = new MOLE.MouseMoveEventComponent();
 	this.addComponent(this.mouseMoveCtrl);
 	this.mouseMoveCtrl.bindEvent(function (mouseHash) {

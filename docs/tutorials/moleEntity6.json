@@ -1,3 +1,4 @@
 {
-	"title": "Mole Entity demo 6 - Test"
+	"title": "Mole Entity demo 6 - Mole Eyes movement Part 2",
+	"children": ["moleEntity7"]
 }

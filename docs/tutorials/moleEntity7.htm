@@ -1,0 +1,27 @@
+<link rel="shortcut icon" type="image/png" href="../docs/tutorials/test/lib/jasmine_favicon.png">
+<link rel="stylesheet" href="../docs/tutorials/test/lib/jasmine.css">
+
+<script src="../docs/tutorials/test/lib/jasmine.js"></script>
+<script src="../docs/tutorials/test/lib/jasmine-html.js"></script>
+<script src="../docs/tutorials/test/lib/boot.js"></script>
+
+<script src="../Entities/Entity.js"></script>
+<script src="../Entities/CanvasEntity.js"></script>
+<script src="../Components/Component.js"></script>
+<script src="../Components/DrawComponent.js"></script>
+<script src="../Components/DrawEyesComponent.js"></script>
+<script src="../Components/MoveEyesComponent.js"></script>
+<script src="../Components/EventComponent.js"></script>
+<script src="../Components/MouseMoveEventComponent.js"></script>
+
+<script src="../docs/tutorials/test/moveEyesComponent.js"></script>
+<script src="../docs/tutorials/test/mouseMoveEventComponent.js"></script>
+
+<script>
+// Move Test content in the middle of the page
+setTimeout(function () {
+	var jsdocMainContentHolder = document.getElementById("main").getElementsByTagName("article")[0];
+			jasmineReporter = document.getElementsByClassName("jasmine_html-reporter")[0];
+	jsdocMainContentHolder.appendChild(jasmineReporter);
+}, 100);
+</script>
