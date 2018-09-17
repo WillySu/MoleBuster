@@ -11,30 +11,44 @@
 <script src="../docs/tutorials/SourceCodeViewer.js"></script>
 <link type="text/css" rel="stylesheet" href="../docs/tutorials/style.css">
 
-<link rel="shortcut icon" type="image/png" href="../docs/tutorials/test/lib/jasmine_favicon.png">
-<link rel="stylesheet" href="../docs/tutorials/test/lib/jasmine.css">
+<div id="htmlCode" class="center">
+<!-- HTML code will be generated dynamically by JavaScript. -->
+</div>
 
-<script src="../docs/tutorials/test/lib/jasmine.js"></script>
-<script src="../docs/tutorials/test/lib/jasmine-html.js"></script>
-<script src="../docs/tutorials/test/lib/boot.js"></script>
+<h4><b>Note</b></h4>
+<p>Mole's eyes will follow mouse cursor.</p>
 
-<script src="../Entities/Entity.js"></script>
-<script src="../Entities/CanvasEntity.js"></script>
-<script src="../Components/Component.js"></script>
-<script src="../Components/DrawComponent.js"></script>
-<script src="../Components/DrawEyesComponent.js"></script>
-<script src="../Components/MoveEyesComponent.js"></script>
-<script src="../Components/EventComponent.js"></script>
-<script src="../Components/MouseMoveEventComponent.js"></script>
+<br/>
 
-<script src="../docs/tutorials/test/moveEyesComponent.js"></script>
-<script src="../docs/tutorials/test/mouseMoveEventComponent.js"></script>
+<details>
+	<summary>HTML code:</summary>
+	<div id="htmlViwer"></div>
+</details>
+
+<details>
+	<summary>JavaScript Source code:</summary>
+	<div id="jsViwer"></div>
+</details>
 
 <script>
-//Move Test content in the middle of the page
-setTimeout(function () {
-	var jsdocMainContentHolder = document.getElementById("main").getElementsByTagName("article")[0];
-			jasmineReporter = document.getElementsByClassName("jasmine_html-reporter")[0];
-	jsdocMainContentHolder.appendChild(jasmineReporter);
-}, 100);
+	SourceCodeViewer("htmlCode", "htmlViwer", {"width":"100%","height":"120px"});
+</script>
+
+<script id="jsCode">//Define mole's width and height, default is 256 x 256
+var list = ["m1", "m2", "m3", "m4", "m5", "m6", "m7", "m8", "m9"];
+var htmlCode = document.getElementById("htmlCode");
+
+list.forEach(function (id) {
+	var canvas = document.createElement("canvas");
+	htmlCode.appendChild(canvas);
+
+	var entity = new MOLE.MoleEntity(id);
+	entity.init({"canvas": canvas});
+	entity.enableMouseMoveEyesTrack = true;
+	entity.update();
+});
+</script>
+
+<script>
+	SourceCodeViewer("jsCode", "jsViwer", {"width":"100%","height":"120px"});
 </script>

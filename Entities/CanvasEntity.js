@@ -24,12 +24,12 @@ MOLE.CanvasEntity.prototype = Object.create(MOLE.Entity.prototype);
 MOLE.CanvasEntity.prototype.setVars = function (opts) {
 	MOLE.Entity.prototype.setVars.call(this, opts);
 	if (typeof opts.canvas == "string") {
-		this.canvas	= document.getElementById(opts.canvas);
+		this.canvas = document.getElementById(opts.canvas);
 	} else if (opts.canvas && typeof opts.canvas == "object" && opts.canvas.tagName == "CANVAS") {
-		this.canvas	= opts.canvas;
+		this.canvas = opts.canvas;
 	}
 	if (!this.canvas) {
-		this.canvas	= document.createElement("canvas");
+		this.canvas = document.createElement("canvas");
 	}
 	this.canvas.width = this.width;
 	this.canvas.height = this.height;	
