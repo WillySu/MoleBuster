@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Tutorial: Mole Entity demo 4 - Mole Eyes movement - move left and right eyes individually</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Tutorial: Mole Entity demo 4 - Mole Eyes movement - move left and right eyes individually</h1>
+
+    <section>
+
+<header>
+    
+    <ul>
+        <li><a href="tutorial-moleEntity5.html">Mole Entity demo 5 - Mole Eyes movement - move mouse cursor to see the eyes tracking</a></li>
+    </ul>
+    
+
+    <h2>Mole Entity demo 4 - Mole Eyes movement - move left and right eyes individually</h2>
+</header>
+
+<article>
+    <script src="../Entities/Entity.js"></script>
+<script src="../Entities/CanvasEntity.js"></script>
+<script src="../Entities/MoleEntity.js"></script>
+<script src="../Components/Component.js"></script>
+<script src="../Components/DrawComponent.js"></script>
+<script src="../Components/DrawEyesComponent.js"></script>
+<script src="../Components/MoveEyesComponent.js"></script>
+<script src="../Components/DrawMoleHeadComponent.js"></script>
+<script src="../Components/EventComponent.js"></script>
+<script src="../Components/MouseMoveEventComponent.js"></script>
+<script src="../docs/tutorials/SourceCodeViewer.js"></script>
+<link type="text/css" rel="stylesheet" href="../docs/tutorials/style.css">
+
+<div id="htmlCode" class="center"><!-- Canvas html tag center-aligned -->
+	<canvas id="moleCanvas"></canvas>
+	<!-- Form with 9 buttons to change the mole's eyes position -->
+	<form name="ctrlForm1" class="posCtrlForm">
+		<div>
+			<input name="topLeftBtnL" type="button" value="left top L"/>
+			<input name="topBtnL" type="button" value="center top L"/>
+			<input name="topRightBtnL" type="button" value="right top L"/>
+			&nbsp;&nbsp;
+			<input name="topLeftBtnR" type="button" value="left top R"/>
+			<input name="topBtnR" type="button" value="center top R"/>
+			<input name="topRightBtnR" type="button" value="right top R"/>
+		</div>
+		<div>
+			<input name="leftBtnL" type="button" value="left middle L"/>
+			<input name="centerBtnL" type="button" value="center middle L"/>
+			<input name="rightBtnL" type="button" value="right middle L"/>
+			&nbsp;&nbsp;
+			<input name="leftBtnR" type="button" value="left middle R"/>
+			<input name="centerBtnR" type="button" value="center middle R"/>
+			<input name="rightBtnR" type="button" value="right middle R"/>
+		</div>
+		<div>
+			<input name="leftBottomBtnL" type="button" value="left bottom L"/>
+			<input name="bottomBtnL" type="button" value="center bottom L"/>
+			<input name="rightBottomBtnL" type="button" value="right bottom L"/>
+			&nbsp;&nbsp;
+			<input name="leftBottomBtnR" type="button" value="left bottom R"/>
+			<input name="bottomBtnR" type="button" value="center bottom R"/>
+			<input name="rightBottomBtnR" type="button" value="right bottom R"/>
+		</div>
+	</form>
+</div>
+
+<h4><b>Note</b></h4>
+<p>You can change the eye ball position of the left eye by calling <b>.moveLeftEye(</b><i>horizontal</i>, <i>vertical</i><b>)</b></p>
+<p>or <b>.moveRightEye(</b><i>horizontal</i>, <i>vertical</i><b>)</b> for the right eye.</p>
+
+<br/>
+
+<details>
+	<summary>HTML code:</summary>
+	<div id="htmlViwer"></div>
+</details>
+
+<details>
+	<summary>JavaScript Source code:</summary>
+	<div id="jsViwer"></div>
+</details>
+
+<script>
+	SourceCodeViewer("htmlCode", "htmlViwer", {"width":"100%","height":"240px"});
+</script>
+
+<script id="jsCode">//miminum code to create a MoleEntity
+var entity = new MOLE.MoleEntity("Mole1").init({"canvas":"moleCanvas"}),
+    f1 = document.ctrlForm1,
+    btnClick = function (e) {
+      var tmp, horizontal, vertical, whichEye;
+      if (e && e.target && e.target.value) {
+        tmp = e.target.value.split(" ");
+        horizontal = tmp[0];
+        vertical = tmp[1];
+				whichEye = tmp[2];
+        if (whichEye == "L") {
+          entity.moveLeftEye(horizontal, vertical);
+        } else if (whichEye == "R") {
+          entity.moveRightEye(horizontal, vertical);
+        }
+      }
+    },
+    i, l, input;
+for (i=0, l=f1.elements.length; i<l; i++) {
+  input = f1.elements[i];
+  input.addEventListener("click", btnClick, true);
+}
+entity.update();
+</script>
+
+<script>
+	SourceCodeViewer("jsCode", "jsViwer", {"width":"100%","height":"240px"});
+</script>
+</article>
+
+</section>
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="MOLE.CanvasEntity.html">CanvasEntity</a></li><li><a href="MOLE.Component.html">Component</a></li><li><a href="MOLE.DrawComponent.html">DrawComponent</a></li><li><a href="MOLE.DrawEyesComponent.html">DrawEyesComponent</a></li><li><a href="MOLE.DrawMoleHeadComponent.html">DrawMoleHeadComponent</a></li><li><a href="MOLE.Entity.html">Entity</a></li><li><a href="MOLE.EventComponent.html">EventComponent</a></li><li><a href="MOLE.MoleEntity.html">MoleEntity</a></li><li><a href="MOLE.MouseMoveEventComponent.html">MouseMoveEventComponent</a></li><li><a href="MOLE.MoveEyesComponent.html">MoveEyesComponent</a></li></ul><h3>Tutorials</h3><ul><li><a href="tutorial-moleEntity1.html">Mole Entity demo 1 - Basic</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Sun Sep 16 2018 17:41:09 GMT-0700 (PDT)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
